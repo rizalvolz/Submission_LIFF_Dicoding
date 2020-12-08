@@ -27,3 +27,15 @@ LINE | Visual Studio Code | Line for developer
 
 Screenshoot Tampilan pada Browser Line
 ![tampilan_browser_line](https://github.com/rizalvolz/Submission_LIFF_Dicoding/blob/main/Screenshoot/Tampilan%20dari%20Browser%20Line.jpg?raw=true)
+
+Screenshoot Tampilan pemilihan Menu Makanan
+![tampilan_pilih_menu](https://github.com/rizalvolz/Submission_LIFF_Dicoding/blob/main/Screenshoot/Tampilan%20Pemilihan%20Menu%20Makanan%20dan%20Minuman.jpg?raw=true)
+
+Screenshoot Tampilan Check Out Makanan
+![tampilan_checkout_makanan](https://github.com/rizalvolz/Submission_LIFF_Dicoding/blob/main/Screenshoot/Tampilan%20Check%20Out%20Makanan.jpg?raw=true)
+
+Screenshoot Tampilan Pesan Setelah Check Out
+![tampilan_pesan](https://github.com/rizalvolz/Submission_LIFF_Dicoding/blob/main/Screenshoot/Tampilan%20Pesan%20Setelah%20Check%20Out%20Makanan.jpg?raw=true)
+
+Screenshoot Tampilan pada Browser Eksternal
+![tampilan_browser_eksternal](https://github.com/rizalvolz/Submission_LIFF_Dicoding/blob/main/Screenshoot/Tampilan%20dari%20Browser%20External.jpg?raw=true)
