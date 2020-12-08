@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Family Friendly!!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
+
+     <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Import Google Icon Font -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Import Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Set Style -->
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+ 
+<body>
+    <!-- Start Container -->
+    <div class="container">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" id="liffAppContent" ng-controller="listContactCtrl"></div>
+        <!-- Start Header Content -->
+        <div class="col s12 center-align">
+        <h5>Family Friendly!!</h5>
+        <hr size="2">
+        </div>
+        <!-- End Header Content -->
+
+        <!-- Start Form Content -->
+        <p>Welcome Guys!!!</p>
+        <p>Mau Pilih Menu Apa Hari ini? <blockquote>(kalau belum masuk, masuk dulu ya!)</blockquote></p>
+        <button class="btn waves-effect waves-light btn-small green accent-4 z-depth-3" id="liffLoginButton"><i class="material-icons left">account_circle</i>Masuk</button>
+        <!-- End of Content -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col s12 center">
+                    <p> Made by<a href="https://www.instagram.com/m.wayaw/" target="_blank">
+                            Muhammad Wahyu</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+    </div>
+
+    <!-- Start Fitur LIFF v2 -->
+    <div id="liffIdErrorMessage" class="hidden">
+        <p>You have not assigned any value for LIFF ID.</p>
+        <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
+            Heroku account follwing the below steps: </p>
+        <code id="code-block">
+            <ol>
+                <li>Go to `Dashboard` in your Heroku account.</li>
+                <li>Click on the app you just created.</li>
+                <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+                <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+                <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+            </ol>
+        </code>
+        <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+        <p>For more information about how to add your LIFF ID, see <a
+                href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
+                app</a>.</p>
+    </div>
+
+    <!-- LIFF INIT ERROR -->
+    <div id="liffInitErrorMessage" class="hidden">
+        <p>Something went wrong with LIFF initialization.</p>
+        <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.
+    </div>
+
+    <!-- NODE.JS LIFF ID ERROR -->
+    <div id="nodeLiffIdErrorMessage" class="hidden">
+        <p>Unable to receive the LIFF ID as an environment variable.</p>
+    </div>
+    <!-- End Fitur LIFF v2 -->
+
+    <!-- End Container -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Integrating the LIFF SDK -->
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+
+    <!-- Script Tambahan -->
+    <script src="pemesanan.js"></script>
+    <script src="liff-awal.js"></script>
+    <script>
+        document.getElementById('liffLoginButton').addEventListener('click', function() {
+            if(!liff.isLoggedIn()) {
+                liff.login();
+            }
+        });
+    </script>
+
+</body>
+</html>

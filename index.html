@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>Family Friendly!!</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <link rel="shortcut icon" type="image/png" href="logo.png" />
+    
+         <!-- Compiled and minified CSS -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+    
+        <!-- Import Google Icon Font -->
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+    
+        <!-- Import Google Font -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+    
+        <!-- Set Style -->
+        <link rel="stylesheet" href="style.css">
+     
+    </head>
+ 
+<body>
+    <!-- Start Container -->
+    <div class="container">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl" id="liffAppContent">
+        <!-- Start Header Content -->
+        <div class="col s12 center-align">
+            <h5>Family Friendly!!</h5>
+            <hr size="2">
+        </div>
+        <!-- End Header Content -->
+
+        <!-- Start Content -->
+        <div class="card small z-depth-3">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img src="logo.png" alt="Poto Pembeli" class="responsive-img" id="userProfile"> 
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Halo kak <span class="font-weight-bold" id="userName"></span><i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Welcome<i class="material-icons right">close</i></span>
+              <p>
+                Hallo kak <span class="font-weight-bold" id="userName2"></span>! Jika ingin memesan sesuatu, silahkan pilih menu dibawah ya kak.</p>
+            </div>
+          </div>
+        
+        
+        <div class="card-panel green accent-1 z-depth-3">
+        <h4>Food</h4><hr size="1">
+        <div class="row">
+            <div class="col s12">
+                <span class="flow-text">Pempek Bakar</span><br>
+                <span>Rp 7.000</span>
+            </div>
+            <div class="right">
+                <button class="btn btn-secondary btn-style" onclick="substract(1, 'pempek_bakar');"><i class="material-icons left">remove_shopping_cart</i></button>
+                <span id="pempek_bakar1"></span>
+                <button class="btn btn-success btn-style" onclick="add(1,  'pempek_bakar');"><i class="material-icons left">add_shopping_cart</i></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <span class="flow-text">Pempek Goreng</span><br>
+                <span>Rp 5.000</span>
+            </div>
+            <div class="right">
+                <button class="btn btn-secondary btn-style" onclick="substract(1, 'pempek_goreng');"><i class="material-icons left">remove_shopping_cart</i></button>
+                <span id="pempek_goreng1"></span>
+                <button class="btn btn-success btn-style" onclick="add(1, 'pempek_goreng');"><i class="material-icons left">add_shopping_cart</i></button>
+            </div>
+        </div>
+
+        <h4>Beverage</h4><hr size="1">
+        <div class="row">
+            <div class="col s12">
+                <span class="flow-text">Enjoy Drink</span><br>
+                <span>Variant : Squidward</span><br>
+                <span>Rp 3.000</span>
+            </div>
+            <div class="right">
+                <button class="btn btn-secondary btn-style" onclick="substract(1, 'enjoy_squidward');"><i class="material-icons left">remove_shopping_cart</i></button>
+                <span id="enjoy_squidward1"></span>
+                <button class="btn btn-success btn-style" onclick="add(1, 'enjoy_squidward');"><i class="material-icons left">add_shopping_cart</i></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <span class="flow-text">Enjoy Drink</span><br>
+                <span>Variant : Patrick</span><br>
+                <span>Rp 3.000</span>
+            </div>
+            <div class="right">
+                <button class="btn btn-secondary btn-style" onclick="substract(1, 'enjoy_patrick');"><i class="material-icons left">remove_shopping_cart</i></button>
+                <span id="enjoy_patrick1"></span>
+                <button class="btn btn-success btn-style" onclick="add(1, 'enjoy_patrick');"><i class="material-icons left">add_shopping_cart</i></button>
+            </div>
+        </div>
+
+        <div class="line mb-3"></div>
+        <div class="d-flex flex-column">
+            <div>
+                <h5>Ringkasan</h5>
+                <div class="d-flex justify-content-between dashed-line mb-2">
+                    <p>Pembelanjaan</p>
+                    <p>
+                        <span id="empty">-</span>
+                        <span id="total"><span id="jmlfood">0</span> Pempek Bakar
+                        <br><span id="jmlfood2">0</span> Pempek Goreng
+                        <br><span id="jmlbef">0</span> Enjoy Drink Squidward
+                        <br><span id="jmlbef2">0</span> Enjoy Drink Patrick
+                    </p>
+                </div>
+                <div>
+                    <p>Total Pembelanjaan Rp <span id="harga">0</span></p>
+                </div>
+            </div>
+            <button class="btn-floating btn-large cyan pulse" id="pesan"><i class="material-icons">add_shopping_cart</i></button>
+        </div>
+        </div>
+        <!-- End Content -->
+
+        <!-- Additional -->
+        <div class="d-flex justify-content-center">
+            <button class="btn waves-effect waves-light btn-small cyan z-depth-3" id="openWindowButton"><i class="material-icons left">open_in_news</i>Browser</button>
+            <button class="btn waves-effect waves-light btn-small green accent-4 z-depth-3" id="liffLogoutButton"><i class="material-icons left">account_circle</i>Keluar</button>
+            <button class="btn waves-effect waves-light btn-small green accent-4 z-depth-3" id="liffLoginButton"><i class="material-icons left">account_circle</i>Masuk</button>
+            <button class="btn waves-effect waves-light btn-small cyan z-depth-3" id="closeWindowButton"><i class="material-icons left">close</i>Tutup</button>
+        </div>
+        <p class="col s12 center" id="isInClientMessage">Posisi dibuka di Browser External.</p>
+        <!-- End of Additional -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col s12 center">
+                    <p> Made by<a href="https://www.instagram.com/m.wayaw/" target="_blank">
+                            Muhammad Wahyu</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+    <!-- Start Fitur LIFF v2 -->
+    <div id="liffIdErrorMessage" class="hidden">
+        <p>You have not assigned any value for LIFF ID.</p>
+        <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
+            Heroku account follwing the below steps: </p>
+        <code id="code-block">
+            <ol>
+                <li>Go to `Dashboard` in your Heroku account.</li>
+                <li>Click on the app you just created.</li>
+                <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+                <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+                <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+            </ol>
+        </code>
+        <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+        <p>For more information about how to add your LIFF ID, see <a
+                href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
+                app</a>.</p>
+    </div>
+
+    <!-- LIFF INIT ERROR -->
+    <div id="liffInitErrorMessage" class="hidden">
+        <p>Something went wrong with LIFF initialization.</p>
+        <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.
+    </div>
+    <!-- NODE.JS LIFF ID ERROR -->
+    <div id="nodeLiffIdErrorMessage" class="hidden">
+        <p>Unable to receive the LIFF ID as an environment variable.</p>
+    </div>
+    <!-- End Fitur LIFF v2 -->
+
+    <!-- End Container -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Integrating the LIFF SDK -->
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+
+    <!-- Script Tambahan -->
+    <script src="pemesanan.js"></script>
+    <script src="liff-awal.js"></script>
+    <script src="liff-star2.js"></script>
+</body>
+</html>
